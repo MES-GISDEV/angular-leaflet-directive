@@ -2,6 +2,7 @@
 
 /*jshint -W117 */
 /*jshint globalstrict: true*/
+/*jshint unused: false, undef:false */
 /* jasmine specs for directives go here */
 
 describe('Directive: leaflet', function() {
@@ -34,7 +35,7 @@ describe('Directive: leaflet', function() {
           lng: 4.04,
         },
       };
-      return mainLayers = {
+      mainLayers = {
         baselayers: {
           osm: {
             name: 'OpenStreetMap',
@@ -60,6 +61,7 @@ describe('Directive: leaflet', function() {
           },
         },
       };
+      return mainLayers;
     });
 
   afterEach(inject(function($rootScope) {
@@ -141,7 +143,7 @@ describe('Directive: leaflet', function() {
           lat: 0.966,
           lng: 2.02,
         };
-        return this.testRunner = function(postRunnerCb, preRunnerCb) {
+        this.testRunner = function(postRunnerCb, preRunnerCb) {
           var element;
           var preRunnerRet;
           angular.extend($rootScope, {
@@ -167,10 +169,12 @@ describe('Directive: leaflet', function() {
             }
           });
         };
+
+        return this.testRunner;
       });
 
       afterEach(function() {
-        var self;
+        //var self;
         var _this = this;
         return ['testRunner'].forEach(function(key) {
           return delete _this[key];
@@ -187,7 +191,7 @@ describe('Directive: leaflet', function() {
       return it('should bind popup to main marker if message is given', function() {
         return this.testRunner((function(mainMarker, leafletMainMarker) {
           return expect(leafletMainMarker._popup._content).toEqual(mainMarker.message);
-        }), function(mainMarker) {
+        }(this)), function(mainMarker) {
 
           return angular.extend(mainMarker, {
             message: 'this is paris',
@@ -243,7 +247,9 @@ describe('Directive: leaflet', function() {
       $rootScope.$digest();
       leafletMainMarker = void 0;
       leafletData.getMarkers().then(function(leafletMarkers) {
-        return leafletMainMarker = leafletMarkers.marker;
+        leafletMainMarker = leafletMarkers.marker;
+
+        return leafletMainMarker;
       });
 
       $rootScope.$digest();
@@ -283,7 +289,9 @@ describe('Directive: leaflet', function() {
       $rootScope.$digest();
       leafletMainMarker = void 0;
       leafletData.getMarkers().then(function(leafletMarkers) {
-        return leafletMainMarker = leafletMarkers.marker;
+        leafletMainMarker = leafletMarkers.marker;
+
+        return leafletMainMarker;
       });
 
       $rootScope.$digest();
@@ -307,7 +315,9 @@ describe('Directive: leaflet', function() {
         },
 
         updateLabelContent: function(content) {
-          return this.label._content = content;
+          this.label._content = content;
+
+          return this.label._content;
         },
       };
       L.Marker.include(L.BaseMarkerMethods);
@@ -374,12 +384,16 @@ describe('Directive: leaflet', function() {
           element = $compile(element)($rootScope);
           map = void 0;
           map = leafletData.getMap().then(function(leafletMap) {
-            return map = leafletMap;
+            map = leafletMap;
+
+            return map;
           });
 
           markers = void 0;
           leafletData.getMarkers().then(function(leafletMarkers) {
-            return markers = leafletMarkers;
+            markers = leafletMarkers;
+
+            return markers;
           });
 
           $rootScope.$digest();
@@ -405,7 +419,9 @@ describe('Directive: leaflet', function() {
 
           markers = void 0;
           leafletData.getMarkers().then(function(leafletMarkers) {
-            return markers = leafletMarkers;
+            markers = leafletMarkers;
+
+            return markers;
           });
 
           $rootScope.$digest();
@@ -426,12 +442,16 @@ describe('Directive: leaflet', function() {
           element = $compile(element)($rootScope);
           map = void 0;
           leafletData.getMap().then(function(leafletMap) {
-            return map = leafletMap;
+            map = leafletMap;
+
+            return map;
           });
 
           markers = void 0;
           leafletData.getMarkers().then(function(leafletMarkers) {
-            return markers = leafletMarkers;
+            markers = leafletMarkers;
+
+            return markers;
           });
 
           $rootScope.$digest();
@@ -452,12 +472,16 @@ describe('Directive: leaflet', function() {
           element = $compile(element)($rootScope);
           map = void 0;
           leafletData.getMap().then(function(leafletMap) {
-            return map = leafletMap;
+            map = leafletMap;
+
+            return map;
           });
 
           markers = void 0;
           leafletData.getMarkers().then(function(leafletMarkers) {
-            return markers = leafletMarkers;
+            markers = leafletMarkers;
+
+            return markers;
           });
 
           $rootScope.$digest();
@@ -478,12 +502,16 @@ describe('Directive: leaflet', function() {
           element = $compile(element)($rootScope);
           map = void 0;
           leafletData.getMap().then(function(leafletMap) {
-            return map = leafletMap;
+            map = leafletMap;
+
+            return map;
           });
 
           markers = void 0;
           leafletData.getMarkers().then(function(leafletMarkers) {
-            return markers = leafletMarkers;
+            markers = leafletMarkers;
+
+            return markers;
           });
 
           $rootScope.$digest();
@@ -504,12 +532,16 @@ describe('Directive: leaflet', function() {
           element = $compile(element)($rootScope);
           map = void 0;
           leafletData.getMap().then(function(leafletMap) {
-            return map = leafletMap;
+            map = leafletMap;
+
+            return map;
           });
 
           markers = void 0;
           leafletData.getMarkers().then(function(leafletMarkers) {
-            return markers = leafletMarkers;
+            markers = leafletMarkers;
+
+            return markers;
           });
 
           $rootScope.$digest();
@@ -530,12 +562,16 @@ describe('Directive: leaflet', function() {
           element = $compile(element)($rootScope);
           map = void 0;
           leafletData.getMap().then(function(leafletMap) {
-            return map = leafletMap;
+            map = leafletMap;
+
+            return map;
           });
 
           markers = void 0;
           leafletData.getMarkers().then(function(leafletMarkers) {
-            return markers = leafletMarkers;
+            markers = leafletMarkers;
+
+            return markers;
           });
 
           $rootScope.$digest();
@@ -587,18 +623,24 @@ describe('Directive: leaflet', function() {
           element = $compile(element)($rootScope);
           map = void 0;
           leafletData.getMap().then(function(leafletMap) {
-            return map = leafletMap;
+            map = leafletMap;
+
+            return map;
           });
 
           markers = void 0;
           leafletData.getMarkers().then(function(leafletMarkers) {
-            return markers = leafletMarkers;
+            markers = leafletMarkers;
+
+            return markers;
           });
 
           $rootScope.$digest();
           layers = void 0;
           leafletData.getLayers().then(function(leafletLayers) {
-            return layers = leafletLayers;
+            layers = leafletLayers;
+
+            return layers;
           });
 
           $rootScope.$digest();
@@ -637,18 +679,24 @@ describe('Directive: leaflet', function() {
           element = $compile(element)($rootScope);
           map = void 0;
           leafletData.getMap().then(function(leafletMap) {
-            return map = leafletMap;
+            map = leafletMap;
+
+            return map;
           });
 
           markers = void 0;
           leafletData.getMarkers().then(function(leafletMarkers) {
-            return markers = leafletMarkers;
+            markers = leafletMarkers;
+
+            return markers;
           });
 
           $rootScope.$digest();
           layers = void 0;
           leafletData.getLayers().then(function(leafletLayers) {
-            return layers = leafletLayers;
+            layers = leafletLayers;
+
+            return layers;
           });
 
           $rootScope.$digest();
@@ -680,18 +728,24 @@ describe('Directive: leaflet', function() {
         element = $compile(element)($rootScope);
         map = void 0;
         leafletData.getMap().then(function(leafletMap) {
-          return map = leafletMap;
+          map = leafletMap;
+
+          return map;
         });
 
         markers = void 0;
         leafletData.getMarkers().then(function(leafletMarkers) {
-          return markers = leafletMarkers;
+          markers = leafletMarkers;
+
+          return markers;
         });
 
         $rootScope.$digest();
         layers = void 0;
         leafletData.getLayers().then(function(leafletLayers) {
-          return layers = leafletLayers;
+          layers = leafletLayers;
+
+          return layers;
         });
 
         $rootScope.$digest();
@@ -728,17 +782,23 @@ describe('Directive: leaflet', function() {
         element = $compile(element)($rootScope);
         map = void 0;
         leafletData.getMap().then(function(leafletMap) {
-          return map = leafletMap;
+          map = leafletMap;
+
+          return map;
         });
 
         markers = void 0;
         leafletData.getMarkers().then(function(leafletMarkers) {
-          return markers = leafletMarkers;
+          markers = leafletMarkers;
+
+          return markers;
         });
 
         layers = void 0;
         leafletData.getLayers().then(function(leafletLayers) {
-          return layers = leafletLayers;
+          layers = leafletLayers;
+
+          return layers;
         });
 
         $rootScope.$digest();
@@ -831,7 +891,9 @@ describe('Directive: leaflet', function() {
           },
         };
         scope = $rootScope.$new();
-        return scope.markers = mainMarkers;
+        scope.markers = mainMarkers;
+
+        return scope.markers;
       });
 
     it('watches marker icon bindings', function() {
@@ -842,7 +904,9 @@ describe('Directive: leaflet', function() {
         element = $compile(element)(scope);
         markers = void 0;
         leafletData.getMarkers().then(function(leafletMarkers) {
-          return markers = leafletMarkers;
+          markers = leafletMarkers;
+
+          return markers;
         });
 
         scope.$digest();
@@ -860,7 +924,9 @@ describe('Directive: leaflet', function() {
         element = $compile(element)(scope);
         markers = void 0;
         leafletData.getMarkers().then(function(leafletMarkers) {
-          return markers = leafletMarkers;
+          markers = leafletMarkers;
+
+          return markers;
         });
 
         scope.$digest();

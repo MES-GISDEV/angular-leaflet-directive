@@ -137,12 +137,16 @@ describe('Directive: geojson', function() {
       leafletGeoJSON = void 0;
       leafletMap = void 0;
       leafletData.getMap().then(function(map) {
-        return leafletMap = map;
+        leafletMap = map;
+
+        return leafletMap;
       });
 
       scope.$digest();
       leafletData.getGeoJSON().then(function(geoJSON) {
-        return leafletGeoJSON = geoJSON;
+        leafletGeoJSON = geoJSON;
+
+        return leafletGeoJSON;
       });
 
       scope.$digest();
@@ -294,12 +298,16 @@ describe('Directive: geojson', function() {
         leafletGeoJSON = void 0;
         leafletMap = void 0;
         leafletData.getMap().then(function(map) {
-          return leafletMap = map;
+          leafletMap = map;
+
+          return leafletMap;
         });
 
         scope.$digest();
         leafletData.getGeoJSON().then(function(geoJSON) {
-          return leafletGeoJSON = geoJSON;
+          leafletGeoJSON = geoJSON;
+
+          return leafletGeoJSON;
         });
 
         scope.$digest();

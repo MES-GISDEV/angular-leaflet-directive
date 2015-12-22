@@ -28,7 +28,7 @@
  */
 
 /*!
-*  angular-leaflet-directive  2015-11-06
+*  angular-leaflet-directive 0.10.1 2015-12-21
 *  angular-leaflet-directive - An AngularJS directive to easily interact with Leaflet maps
 *  git: https://github.com/tombatossals/angular-leaflet-directive
 */
@@ -186,7 +186,6 @@ angular.module('leaflet-directive', []).directive('leaflet', ["$q", "leafletData
 }]);
 
 angular.module('leaflet-directive').factory('leafletBoundsHelpers', ["$log", "leafletHelpers", function($log, leafletHelpers) {
-
   var isArray = leafletHelpers.isArray;
   var isNumber = leafletHelpers.isNumber;
   var isFunction = leafletHelpers.isFunction;
@@ -492,7 +491,7 @@ angular.module('leaflet-directive').service('leafletData', ["$log", "$q", "leafl
       'geoJSON',
       'UTFGrid', //odd ball on naming convention keeping to not break
       'decorations',
-      'directiveControls',];
+      'directiveControls', ];
 
   //init
   _privateItems.forEach(function(itemName) {
@@ -3855,8 +3854,7 @@ angular.module('leaflet-directive')
           _remove(leafletGeoJSON);
         };
 
-        var _addGeojson = function(model, maybeName) {
-          var geojson = angular.copy(model);
+        var _addGeojson = function(geojson, maybeName) {
           if (!(isDefined(geojson) && isDefined(geojson.data))) {
             return;
           }
@@ -5147,7 +5145,7 @@ angular.module('leaflet-directive').directive('tiles', ["$log", "leafletData", "
               });
             },
           };
-        },]);
+        }, ]);
 });
 
 angular.module('leaflet-directive')

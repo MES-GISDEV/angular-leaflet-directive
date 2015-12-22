@@ -1,5 +1,4 @@
 angular.module('leaflet-directive').factory('leafletBoundsHelpers', function($log, leafletHelpers) {
-
   var isArray = leafletHelpers.isArray;
   var isNumber = leafletHelpers.isNumber;
   var isFunction = leafletHelpers.isFunction;

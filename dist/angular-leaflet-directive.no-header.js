@@ -462,7 +462,7 @@ angular.module('leaflet-directive').service('leafletData', ["$log", "$q", "leafl
       'geoJSON',
       'UTFGrid', //odd ball on naming convention keeping to not break
       'decorations',
-      'directiveControls', ];
+      'directiveControls',];
 
   //init
   _privateItems.forEach(function(itemName) {
@@ -5116,7 +5116,7 @@ angular.module('leaflet-directive').directive('tiles', ["$log", "leafletData", "
               });
             },
           };
-        }, ]);
+        },]);
 });
 
 angular.module('leaflet-directive')
